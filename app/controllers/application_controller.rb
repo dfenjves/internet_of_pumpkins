@@ -18,7 +18,6 @@ class ApplicationController < Sinatra::Base
     # end
 
     scheduler.every '30s' do
-        puts "test"
         if checker.new_tweet?
           pumpkin_particle.print_message(checker.latest_tweet)
         end
